@@ -156,6 +156,7 @@ resource "aws_instance" "ec2_agent_vector" {
     default_api_key = "${var.DD_API_KEY}"
     compression = "gzip"' | sudo tee /etc/vector/vector.toml
     sudo systemctl start vector
+    sudo reboot
     EOL
 }
 
